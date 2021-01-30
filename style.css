@@ -1,0 +1,202 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	transition: all 0.3s;
+}
+body {
+	font-family: sans-serif;
+}
+.task {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: 13px;
+}
+.task__body {
+	background: #ffffff;
+	box-shadow: 0px 4px 22px 7px rgba(0, 0, 0, 0.25);
+	min-height: 100px;
+	max-width: 700px;
+	min-width: 600px;
+	padding: 20px 10px;
+}
+@media screen and (max-width: 650px) {
+	.task__body {
+		min-width: 100%;
+	}
+}
+
+.task__add {
+	margin-bottom: 5px;
+	display: flex;
+	align-items: center;
+}
+.task__input {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	color: #000;
+	font-family: sans-serif;
+	padding: 5px 5px 5px 10px;
+	outline: none;
+	width: 70%;
+	overflow: hidden;
+	border: 2px solid #9db7f0;
+	border-right: 1px solid transparent;
+	border-left: 1px solid transparent;
+	border-top: 1px solid transparent;
+}
+.task__input::placeholder {
+	color: #767676;
+}
+.task__out-tasks {
+	display: flex;
+	flex-direction: column;
+}
+
+.task__out-tasks li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.task__out-tasks li button {
+	background: transparent;
+	border: 0;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	outline: 0;
+	cursor: pointer;
+}
+
+.task__out-tasks li button:hover {
+	transform: rotate(360deg);
+}
+
+.task__btn {
+	display: block;
+	width: 30%;
+	height: 50px;
+	background: transparent;
+	border: 0;
+	text-align: center;
+	border: 2px solid #074ee8;
+	border-left: 0px solid transparent;
+	border-top: 0px solid transparent;
+	border-right: 0px solid transparent;
+	box-sizing: border-box;
+	border-radius: 0px 4px 4px 0px;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+
+.task__btn:focus {
+	outline: 0;
+}
+.task__card {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 20px 10px;
+	background: rgba(0, 0, 0, 0.041);
+}
+.task__done {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	border: 2px solid #082461;
+	transition: all 0.2s;
+	background: url(done-icon.svg) no-repeat center / 0px;
+	cursor: pointer;
+}
+
+.task__text {
+	width: 95%;
+	text-align: left;
+	margin: 0 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.task__remove {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	border: 2px solid #082461;
+	background: url(close-icon.svg) no-repeat center / 15px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+@media screen and (min-width: 992px) {
+	.task__remove:hover {
+		background-color: #c5d7ff;
+		transform: scale(1.1);
+	}
+	.task__done:hover {
+		background-size: 17px;
+	}
+
+	.task__btn:hover {
+		background: linear-gradient(-90deg, #074ee8, rgba(255, 255, 255, 0));
+		color: #fff;
+		width: 35%;
+	}
+}
+
+.task__card.done p {
+	text-decoration: line-through;
+}
+
+.task__card.done .task__done {
+	background-size: 17px;
+}
+
+.task__color {
+	display: block;
+	background: transparent;
+	border: 0;
+	width: 40%;
+	height: 50px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+.error {
+	border: 3px solid red;
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.5;
+	border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+	.task__text {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 992px) {
+	.task__done {
+		background-size: 17px;
+	}
+}
+
+form {
+	display: flex;
+	width: 100%;
+}
+
+hr {
+	display: block;
+	border: 0;
+	height: 1px;
+	width: 100%;
+	background: rgba(51, 51, 51, 0.493);
+	margin: 5px 0;
+}

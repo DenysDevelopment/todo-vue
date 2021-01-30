@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>To Do by DiniC</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<section class="task">
+			<div class="task__body">
+				<div class="task__add">
+					<form @submit.prevent="addTask">
+						<input class="task__input" type="text"  maxlength="150" :value="inputText" @input="inputHandler" :enter="addTask"  />
+						<button class="task__btn" type="submit" value="Добавить">add task</button>
+					</form>
+				</div>
+        <template v-if="todoList.length > 0">
+          <p if>total task {{ todoList.length }}</p>
+          <hr>
+          <ul class="task__out-tasks">
+            <li v-for="(item, idx) in todoList">
+              {{ idx + 1 }}. {{ item }} <button v-on:click="removeTask(idx)" style="padding: 5px">&times;</button>
+            </li>
+          </ul>
+        </ul>
+        </template>
+        <div v-else style='text-align: center;padding: 10px 0;'>tasks not a found</div>
+			</div>
+    </section>
+		<script src="https://unpkg.com/vue@next"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
